@@ -14,3 +14,14 @@ t.test(X, Y, alternative = "greater", var.equal = FALSE)
 #C. 
 var.test(X, Y)
 t.test(X, Y, var.equal = TRUE)
+
+#No2
+#A
+mu = 20000
+n = 100
+xbar = 23500
+sd = 3900
+
+tsum.test(mean.X = xbar, s.X = sd, n.X = n,
+          alternative = "greater", mu0 = mu,
+          conf.level = 0.95,  var.equal =  TRUE)
