@@ -6,14 +6,13 @@ Seorang peneliti melakukan penelitian mengenai pengaruh aktivitas 𝐴 terhadap 
 
 
 ## A.Carilah Standar Deviasi dari data selisih pasangan pengamatan tabel diatas
-
-``R 
+```R 
 data <- data.frame(n,X,Y)
 standardev <- sd(x-y)
 print(standardev)
-``
+```
 
-<img src= (https://user-images.githubusercontent.com/74358409/170875750-b03c9f6d-88ee-4c06-8a80-e3239504ccf7.png width="300" >
+<img src= https://user-images.githubusercontent.com/74358409/170875750-b03c9f6d-88ee-4c06-8a80-e3239504ccf7.png width="300" >
 
 ## B. Carilah nilai t (p-value)
 ```R 
