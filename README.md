@@ -8,10 +8,22 @@ Seorang peneliti melakukan penelitian mengenai pengaruh aktivitas 𝐴 terhadap 
 ## A.Carilah Standar Deviasi dari data selisih pasangan pengamatan tabel diatas
 
 ``R 
-selisih = (x-y)
-standardev = sd(selisih)
-print (selisih)
+data <- data.frame(n,X,Y)
+standardev <- sd(x-y)
+print(standardev)
 ``
 
+<img src= (https://user-images.githubusercontent.com/74358409/170875750-b03c9f6d-88ee-4c06-8a80-e3239504ccf7.png width="300" >
+
 ## B. Carilah nilai t (p-value)
-a
+```R 
+Nilai t(p-value)
+t.test(X, Y, alternative = "greater", var.equal = FALSE)
+```
+
+## C. Tentukanlah apakah terdapat pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴 jika diketahui tingkat signifikansi 𝛼 = 5% serta H0 : “tidak ada pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴”
+
+```R
+var.test(X, Y)
+t.test(X, Y, var.equal = TRUE)
+```
