@@ -20,9 +20,6 @@ Nilai t(p-value)
 t.test(X, Y, alternative = "greater", var.equal = FALSE)
 ```
 
-<img src=https://user-images.githubusercontent.com/74358409/170875989-f30d67fb-43d2-41ab-8b04-4f31ccb57563.png width="300" >
-
-
 ## C. Tentukanlah apakah terdapat pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴 jika diketahui tingkat signifikansi 𝛼 = 5% serta H0 : “tidak ada pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴”
 
 ```R
