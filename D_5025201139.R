@@ -9,7 +9,6 @@ standardev <- sd(x-y)
 print(standardev)
 
 #B
-Nilai t(p-value)
 t.test(X, Y, alternative = "greater", var.equal = FALSE)
 
 #C. 
