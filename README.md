@@ -14,3 +14,4 @@ print (selisih)
 ``
 
 ## B. Carilah nilai t (p-value)
+a
