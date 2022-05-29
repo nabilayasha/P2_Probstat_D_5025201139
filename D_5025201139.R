@@ -5,8 +5,14 @@ y <- c(100,95,70,90,90,90,89,90,100)
 
 #A
 data <- data.frame(n,X,Y)
-selisih = (x-y)
+selisih = x-y
 standardev = sd(selisih)
 print (selisih)
 
 #B
+Nilai t(p-value)
+t.test(X, Y, alternative = "greater", var.equal = FALSE)
+
+#C. 
+var.test(X, Y)
+t.test(X, Y, var.equal = TRUE)
