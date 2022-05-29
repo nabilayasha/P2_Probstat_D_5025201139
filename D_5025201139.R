@@ -7,6 +7,6 @@ y <- c(100,95,70,90,90,90,89,90,100)
 data <- data.frame(n,X,Y)
 selisih = (x-y)
 standardev = sd(selisih)
-print (selisih)\
+print (selisih)
 
 #B
