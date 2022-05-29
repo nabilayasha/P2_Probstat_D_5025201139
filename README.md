@@ -7,10 +7,10 @@ Seorang peneliti melakukan penelitian mengenai pengaruh aktivitas 𝐴 terhadap 
 
 ## A.Carilah Standar Deviasi dari data selisih pasangan pengamatan tabel diatas
 
-''R 
+``R 
 selisih = (x-y)
 standardev = sd(selisih)
 print (selisih)
-''
+``
 
 ## B. Carilah nilai t (p-value)
