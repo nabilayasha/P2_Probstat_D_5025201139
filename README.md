@@ -26,3 +26,17 @@ t.test(X, Y, alternative = "greater", var.equal = FALSE)
 var.test(X, Y)
 t.test(X, Y, var.equal = TRUE)
 ```
+# NO2
+Diketahui bahwa mobil dikemudikan rata-rata lebih dari 20.000 kilometer per tahun. Untuk menguji klaim ini, 100 pemilik mobil yang dipilih secara acak diminta untuk mencatat jarak yang mereka tempuh. Jika sampel acak menunjukkan rata-rata 23.500 kilometer dan standar deviasi 3900 kilometer.
+
+## A. Apakah Anda setuju dengan klaim tersebut?
+```R
+Setuju, karena mean > 20000
+```
+
+## B. Jelaskan maksud dari output yang dihasilkan!
+```R
+
+```
+
+## C. Buatlah kesimpulan berdasarkan P-Value yang dihasilkan!
