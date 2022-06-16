@@ -74,6 +74,7 @@ qt(p = 0.05, df = 2, lower.tail = FALSE)
 ```
 
 E. Keputusan
+
 Keputusan : Gagal Tolak H0
 
 F. Kesimpulan
@@ -143,16 +144,61 @@ scale_x_discrete() + xlab("Treatment Group") +  ylab("Length (cm)")
 Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui pengaruh suhu operasi (100˚C, 125˚C dan 150˚C) dan tiga jenis kaca pelat muka (A, B dan C) pada keluaran cahaya tabung osiloskop. Percobaan dilakukan sebanyak 27 kali dan didapat data sebagai berikut: Data Hasil Eksperimen. Dengan data tersebut:
 
 a. Buatlah plot sederhana untuk visualisasi data
+```R
+id <- "1aLUOdw_LVJq6VQrQEkuQhZ8FW43FemTJ"
+GTL <- read.csv(sprintf("https://docs.google.com/uc?id=%s&export=download", id))
+head(GTL)
+str(GTL)
+```
+![image](https://user-images.githubusercontent.com/74358409/174067748-d75c45e9-b938-4012-b590-5050f8c8230b.png)
+
+
+```R
+qplot(x = Temp, y = Light, geom = "point", data = GTL) +
+  facet_grid(.~Glass, labeller = label_both)
+```
+![image](https://user-images.githubusercontent.com/74358409/174068058-90a84266-c1b6-42ff-a267-0c2f6cca417b.png)
 
 
 b. Lakukan uji ANOVA dua arah
+```R
+GTL$Glass <- as.factor(GTL$Glass)
+GTL$Temp_Factor <- as.factor(GTL$Temp)
+str(GTL)
+```
+![image](https://user-images.githubusercontent.com/74358409/174068195-8ec22157-f1d4-4d0e-b7dd-a57cae62379b.png)
+
+```R
+anova <- aov(Light ~ Glass*Temp_Factor, data = GTL)
+summary(anova)
+```
+![image](https://user-images.githubusercontent.com/74358409/174068254-f7b4aa19-6b33-4f58-bb83-9da5ff239402.png)
 
 
 c. Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
+```R
+data_summary <- group_by(GTL, Glass, Temp) %>%
+  summarise(mean=mean(Light), sd=sd(Light)) %>%
+  arrange(desc(mean))
+print(data_summary)
+```
+![image](https://user-images.githubusercontent.com/74358409/174068444-bfbe02f6-3ef1-4f48-b3d7-ab35b876ab35.png)
 
 
 d. Lakukan uji Tukey
-
+```R
+tukey <- TukeyHSD(anova)
+print(tukey)
+```
 
 e. Gunakan compact letter display untuk menunjukkan perbedaan signifikan antara uji Anova dan uji Tukey
-
+```R
+tukey.cld <- multcompLetters4(anova, tukey)
+print(tukey.cld)
+```
+```R
+cld <- as.data.frame.list(tukey.cld$`Glass:Temp_Factor`)
+data_summary$Tukey <- cld$Letters
+print(data_summary)
+```
+![image](https://user-images.githubusercontent.com/74358409/174068713-2b4b883a-0482-4dbf-87fc-a37ab543da8d.png)
