@@ -27,3 +27,17 @@ tsum.test(mean.x = 23500, s.x = 3900, n.x = 100,
           alternative = "greater", mu = 20000,
           conf.level = 0.95,  var.equal =  TRUE)
 
+#3
+#b
+tsum.test(mean.x=3.64, s.x = 1.67, n.x = 19, 
+          mean.y =2.79, s.y = 1.32, n.y = 27, 
+          alternative = "greater", var.equal = TRUE)
+
+#c
+df <- 2
+plotDist(dist = 't', df = df)
+
+#d
+qt(p = 0.05, df = 2, lower.tail = FALSE)
+
+
