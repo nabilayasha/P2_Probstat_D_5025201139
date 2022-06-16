@@ -36,10 +36,14 @@ Setuju, karena mean > 20000
 
 B. Jelaskan maksud dari output yang dihasilkan!
 ```R
-
+tsum.test(mean.x = 23500, s.x = 3900, n.x = 100,
+          alternative = "greater", mu = 20000,
+          conf.level = 0.95,  var.equal =  TRUE)
 ```
+![image](https://user-images.githubusercontent.com/74358409/174033128-68377f30-d47f-4584-baf8-990b9a32a60e.png)
 
 C. Buatlah kesimpulan berdasarkan P-Value yang dihasilkan!
+Rata - rata mobil dikemudikan lebih dari 20.000 km/tahun
 
 # NO3
 Berilah keputusan serta kesimpulan yang didapatkan dari hasil diatas. Asumsikan nilai variancenya sama, apakah ada perbedaan pada rata-ratanya (α= 0.05)?
