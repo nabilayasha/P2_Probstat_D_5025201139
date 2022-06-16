@@ -40,4 +40,35 @@ plotDist(dist = 't', df = df)
 #d
 qt(p = 0.05, df = 2, lower.tail = FALSE)
 
+#4
+#a
+myFile  <- read.table(url("https://rstatisticsandresearch.weebly.com/uploads/1/0/2/6/1026585/onewayanova.txt")) 
+dim(myFile)
+head(myFile)
 
+myFile$Group <- as.factor(myFile$Group)
+myFile$Group = factor(myFile$Group,labels = c("Kucing Oren","Kucing Hitam","Kucing Putih"))
+
+class(myFile$Group)
+
+group1 <- subset(myFile, Group=="Kucing Oren")
+group2 <- subset(myFile, Group=="Kucing Hitam")
+group3 <- subset(myFile, Group=="Kucing Putih")
+
+#b
+bartlett.test(Length~Group, data=dataoneway)
+
+#c
+qqnorm(grup1$Length)
+qqline(grup1$Length)
+
+#e
+model1 <- lm(Length~Group, data=myFile)
+
+anova(model1)
+
+TukeyHSD(aov(model1))
+
+#f
+ggplot(dataoneway, aes(x = Group, y = Length)) + geom_boxplot(fill = "grey80", colour = "black") + 
+scale_x_discrete() + xlab("Treatment Group") +  ylab("Length (cm)")
