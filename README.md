@@ -49,8 +49,11 @@ Rata - rata mobil dikemudikan lebih dari 20.000 km/tahun
 Berilah keputusan serta kesimpulan yang didapatkan dari hasil diatas. Asumsikan nilai variancenya sama, apakah ada perbedaan pada rata-ratanya (α= 0.05)?
 
 A. H0 dan H1
+H0 : rata-rata Bandung - rata-rata Bali = 0
+H1 : rata-rata Bandung - rata-rata Bali != 0
 
 B. Hitung Sampel Statistik
+
 
 C. Lakukan Uji Statistik (df =2)
 
