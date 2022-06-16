@@ -53,15 +53,31 @@ H0 : rata-rata Bandung - rata-rata Bali = 0
 H1 : rata-rata Bandung - rata-rata Bali != 0
 
 B. Hitung Sampel Statistik
-
+```R
+tsum.test(mean.x=3.64, s.x = 1.67, n.x = 19, 
+          mean.y =2.79, s.y = 1.32, n.y = 27, 
+          alternative = "greater", var.equal = TRUE)
+```
+![image](https://user-images.githubusercontent.com/74358409/174040188-22f0a090-3adb-4715-a73a-e14b7eecce1f.png)
 
 C. Lakukan Uji Statistik (df =2)
+```R
+df <- 2
+plotDist(dist = 't', df = df)
+```
+![image](https://user-images.githubusercontent.com/74358409/174039993-2e946461-4813-4b46-a8a8-0fd952b4f11a.png)
 
 D. Nilai Kritikal
+```R
+qt(p = 0.05, df = 2, lower.tail = FALSE)
+[1] 2.919986
+```
 
 E. Keputusan
+Keputusan : Gagal Tolak H0
 
 F. Kesimpulan
+Tidak ada perbedaan pada rata-rata jumlah saham perusahaan di dua kota tersebut
 
 # NO4
 A. Buatlah masing masing jenis spesies menjadi 3 subjek "Grup" (grup 1,grup 2,grup 3). Lalu Gambarkan plot kuantil normal untuk setiap kelompok dan lihat apakah ada outlier utama dalam homogenitas varians.
