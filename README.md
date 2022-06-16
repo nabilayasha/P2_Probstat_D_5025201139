@@ -40,3 +40,54 @@ B. Jelaskan maksud dari output yang dihasilkan!
 ```
 
 C. Buatlah kesimpulan berdasarkan P-Value yang dihasilkan!
+
+# NO3
+Berilah keputusan serta kesimpulan yang didapatkan dari hasil diatas. Asumsikan nilai variancenya sama, apakah ada perbedaan pada rata-ratanya (α= 0.05)?
+
+A. H0 dan H1
+
+B. Hitung Sampel Statistik
+
+C. Lakukan Uji Statistik (df =2)
+
+D. Nilai Kritikal
+
+E. Keputusan
+
+F. Kesimpulan
+
+# NO4
+A. Buatlah masing masing jenis spesies menjadi 3 subjek "Grup" (grup 1,grup 2,grup 3). Lalu Gambarkan plot kuantil normal untuk setiap kelompok dan lihat apakah ada outlier utama dalam homogenitas varians.
+
+
+B. carilah atau periksalah Homogeneity of variances nya , Berapa nilai p yang didapatkan? , Apa hipotesis dan kesimpulan yang dapat diambil ?
+
+
+C. Untuk uji ANOVA (satu arah), buatlah model linier dengan Panjang versus Grup dan beri nama model tersebut model 1.
+
+
+D. Dari Hasil Poin C, Berapakah nilai-p ? , Apa yang dapat Anda simpulkan dari H0?
+
+
+E. Verifikasilah jawaban model 1 dengan Post-hoc test Tukey HSD, dari nilai p yang didapatkan apakah satu jenis kucing lebih panjang dari yang lain? Jelaskan.
+
+
+F. Visualisasikan data dengan ggplot2
+
+# NO 5
+Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui pengaruh suhu operasi (100˚C, 125˚C dan 150˚C) dan tiga jenis kaca pelat muka (A, B dan C) pada keluaran cahaya tabung osiloskop. Percobaan dilakukan sebanyak 27 kali dan didapat data sebagai berikut: Data Hasil Eksperimen. Dengan data tersebut:
+
+a. Buatlah plot sederhana untuk visualisasi data
+
+
+b. Lakukan uji ANOVA dua arah
+
+
+c. Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
+
+
+d. Lakukan uji Tukey
+
+
+e. Gunakan compact letter display untuk menunjukkan perbedaan signifikan antara uji Anova dan uji Tukey
+
