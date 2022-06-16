@@ -81,21 +81,63 @@ Tidak ada perbedaan pada rata-rata jumlah saham perusahaan di dua kota tersebut
 
 # NO4
 A. Buatlah masing masing jenis spesies menjadi 3 subjek "Grup" (grup 1,grup 2,grup 3). Lalu Gambarkan plot kuantil normal untuk setiap kelompok dan lihat apakah ada outlier utama dalam homogenitas varians.
+  
+  -mengambil data dari link yang telah disediadakan
+```R
+myFile  <- read.table(url("https://rstatisticsandresearch.weebly.com/uploads/1/0/2/6/1026585/onewayanova.txt")) 
+dim(myFile)
+head(myFile)
+```
 
+membuat myFile menjadi group, kemudian cek
+```R
+myFile$Group <- as.factor(myFile$Group)
+myFile$Group = factor(myFile$Group,labels = c("Kucing Oren","Kucing Hitam","Kucing Putih"))
+```
+```R
+class(myFile$Group)
+```
+
+bagi value menjadi 3 bagian ke 3 grup
+```R
+group1 <- subset(myFile, Group=="Kucing Oren")
+group2 <- subset(myFile, Group=="Kucing Hitam")
+group3 <- subset(myFile, Group=="Kucing Putih")
+```
 
 B. carilah atau periksalah Homogeneity of variances nya , Berapa nilai p yang didapatkan? , Apa hipotesis dan kesimpulan yang dapat diambil ?
-
+```R
+bartlett.test(Length~Group, data=dataoneway)
+```
+p-value = 0.8054
+bartlett = 0.43292
+df = 2
 
 C. Untuk uji ANOVA (satu arah), buatlah model linier dengan Panjang versus Grup dan beri nama model tersebut model 1.
-
+```R
+qqnorm(grup1$Length)
+qqline(grup1$Length)
+```
+![image](https://user-images.githubusercontent.com/74358409/174058104-49f18b51-389e-49fc-9c8e-20c57bac2477.png)
 
 D. Dari Hasil Poin C, Berapakah nilai-p ? , Apa yang dapat Anda simpulkan dari H0?
+p-value bernilai 0.8054
+H0 diterima
 
-
-E. Verifikasilah jawaban model 1 dengan Post-hoc test Tukey HSD, dari nilai p yang didapatkan apakah satu jenis kucing lebih panjang dari yang lain? Jelaskan.
-
+E. Verifikasilah jawaban model 1 dengan Post-hoc test Tukey HSD, dari nilai p yang didapatkan apakah satu jenis kucing lebih panjang dari yang lain? J
+```R
+model1 <- lm(Length~Group, data=myFile)
+anova(model1)
+TukeyHSD(aov(model1))
+```
 
 F. Visualisasikan data dengan ggplot2
+```R
+ggplot(dataoneway, aes(x = Group, y = Length)) + geom_boxplot(fill = "grey80", colour = "black") + 
+scale_x_discrete() + xlab("Treatment Group") +  ylab("Length (cm)")
+```
+![image](https://user-images.githubusercontent.com/74358409/174058573-ce52eec4-c2a1-4da3-9fd9-957d449a649f.png)
+
 
 # NO 5
 Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui pengaruh suhu operasi (100˚C, 125˚C dan 150˚C) dan tiga jenis kaca pelat muka (A, B dan C) pada keluaran cahaya tabung osiloskop. Percobaan dilakukan sebanyak 27 kali dan didapat data sebagai berikut: Data Hasil Eksperimen. Dengan data tersebut:
